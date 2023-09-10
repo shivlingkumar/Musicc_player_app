@@ -14,9 +14,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.allaboutdarktheme.adapter.MusicAdapter
+import com.example.allaboutdarktheme.adpater.MusicAdapter
 import com.example.allaboutdarktheme.databinding.ActivityMainBinding
 import com.example.allaboutdarktheme.db.Music
+import com.example.allaboutdarktheme.utils.MusicLoader
+import com.example.allaboutdarktheme.utils.MusicLoader.Companion.getAllAudio
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -120,7 +122,7 @@ class MainActivity : AppCompatActivity() {
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        musicList = getAllAudio()
+        musicList = MusicLoader.getAllAudio(this)
         binding.musicRV.setItemViewCacheSize(13)
         binding.musicRV.setHasFixedSize(true)
         binding.musicRV.layoutManager = LinearLayoutManager(this@MainActivity)
@@ -130,53 +132,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    @SuppressLint("Recycle", "Range")
-    private fun getAllAudio(): ArrayList<Music> {
-        val tempList = ArrayList<Music>()
-        val selection = MediaStore.Audio.Media.IS_MUSIC + "!=0"
-        val projection = arrayOf(
-            MediaStore.Audio.Media._ID,
-            MediaStore.Audio.Media.TITLE,
-            MediaStore.Audio.Media.ALBUM,
-            MediaStore.Audio.Media.ARTIST,
-            MediaStore.Audio.Media.DURATION,
-            MediaStore.Audio.Media.DATE_ADDED,
-            MediaStore.Audio.Media.DATA
-        )
-        val cursor = this.contentResolver.query(
-            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-            projection,
-            selection,
-            null,
-            MediaStore.Audio.Media.DATE_ADDED + " DESC",
-            null
-        )
 
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                do {
-                    val title =
-                        cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
-                    val id = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media._ID))
-                    val album =
-                        cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM))
-                    val artist =
-                        cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
-                    val path = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA))
-                    val duration =
-                        cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION))
-
-                    val music = Music(id, title, album, artist, path, duration)
-                    val file = File(music.path)
-
-                    if (file.exists()) {
-                        tempList.add(music)
-                    }
-                } while (cursor.moveToNext())
-                cursor.close()
-            }
-        }
-
-        return tempList
-    }
 }

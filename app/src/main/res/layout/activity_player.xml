@@ -56,22 +56,32 @@
         app:strokeColor="@color/teal_200"
         app:strokeWidth="5dp" />
 
-    <TextView
-        android:id="@+id/song_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/song_name"
-        android:textColor="@color/black"
-        android:textSize="19sp"
 
-        />
+
+        <TextView
+            android:id="@+id/song_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_marginTop="10dp"
+            android:text="@string/song_name"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+
+         />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
