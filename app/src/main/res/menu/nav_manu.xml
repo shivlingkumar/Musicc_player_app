@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navFeedback"
+        android:icon="@drawable/baseline_feedback_24"
+        android:title="@string/feedback" />
+
+    <item
+        android:id="@+id/navSettings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/navAbout"
+        android:icon="@drawable/baseline_spa_24"
+        android:title="About" />
+
+    <item
+        android:id="@+id/navExit"
+        android:icon="@drawable/baseline_exit_to_app_24"
+        android:title="Exit" />
+</menu>
