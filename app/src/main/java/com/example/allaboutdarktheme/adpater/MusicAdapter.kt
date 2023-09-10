@@ -1,9 +1,11 @@
 package com.example.allaboutdarktheme.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.allaboutdarktheme.Player_Activity
 import com.example.allaboutdarktheme.databinding.MusicViewBinding
 import com.example.allaboutdarktheme.db.Music
 
@@ -22,7 +24,18 @@ class MusicAdapter(private val context: Context, private val musicList: ArrayLis
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         val currentSong = musicList[position]
-        holder.binding.songname.text = currentSong.toString()
+        holder.binding.songName.text = currentSong.title
+        holder.binding.songDuration.text = currentSong.duration.toString()
+        holder.binding.songArtist.text = currentSong.artist.toString()
         // Set other properties like album, image, duration if needed
+
+        holder.binding.musicContainer.setOnClickListener {
+            val intent = Intent(context,Player_Activity::class.java)
+            intent.putExtra("songPath",currentSong.path)
+            intent.putExtra("songName",currentSong.title)
+            context.startActivity(intent)
+        }
+
+
     }
 }

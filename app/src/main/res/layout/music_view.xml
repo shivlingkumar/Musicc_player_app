@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
+    android:id="@+id/musicContainer"
     android:padding="2dp">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -15,7 +16,7 @@
         app:shapeAppearanceOverlay="@style/curved" />
 
     <TextView
-        android:id="@+id/songname"
+        android:id="@+id/songName"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
@@ -27,7 +28,7 @@
         android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/songalbuam"
+        android:id="@+id/songArtist"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="15dp"
