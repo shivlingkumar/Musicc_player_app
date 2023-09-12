@@ -44,10 +44,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.shuffle.setOnClickListener {
-            val intent = Intent(this, Player_Activity::class.java)
-            startActivity(intent)
-        }
+//        binding.shuffle.setOnClickListener {
+//            val intent = Intent(this, Player_Activity::class.java)
+//            startActivity(intent)
+//        }
 //        filhall not working
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {

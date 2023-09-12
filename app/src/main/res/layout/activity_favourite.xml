@@ -23,7 +23,7 @@
             android:layout_height="50dp"
             android:backgroundTint="@android:color/transparent"
             android:contentDescription="@string/Favourites_btn"
-            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:src="@drawable/privous"
             app:tint="@color/white" />
 
         <TextView

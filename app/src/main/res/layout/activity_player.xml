@@ -21,6 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_marginEnd="10dp"
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_arrow_back_ios_24" />
@@ -30,8 +31,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="?attr/colorOnSecondary"
             android:text="@string/world_of_music"
-            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <ImageButton
@@ -65,8 +66,8 @@
             android:maxLines="1"
             android:layout_marginTop="10dp"
             android:text="@string/song_name"
-            android:textColor="@color/black"
             android:textSize="19sp"
+            android:textColor="?attr/colorOnSecondary"
             android:singleLine="true"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
@@ -81,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
@@ -129,14 +130,15 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textColor="?attr/colorOnSecondary"
             android:text="@string/start_tv"
-            android:textColor="@color/black"
             android:textSize="15sp" />
 
 
         <SeekBar
             android:id="@+id/seekbar"
             android:layout_width="wrap_content"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_height="match_parent"
             android:layout_weight="1"
 
@@ -148,8 +150,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textColor="?attr/colorOnSecondary"
             android:text="@string/end_tv"
-            android:textColor="@color/black"
             android:textSize="15sp" />
 
 
@@ -168,9 +170,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/baseline_repeat_24" />
+            app:srcCompat="@drawable/baseline_repeat_24" />
 
         <ImageButton
             android:id="@+id/eq"
@@ -178,6 +181,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_graphic_eq_24" />
@@ -188,6 +192,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_timer_24" />
@@ -198,6 +203,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:textColor="?attr/colorOnSecondary"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_share_24" />

@@ -19,26 +19,26 @@
         android:id="@+id/songName"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:textColor="?attr/colorOnSecondary"
         android:layout_marginStart="15dp"
         android:layout_toStartOf="@+id/songDuration"
         android:layout_toEndOf="@+id/imagrMusicview"
         android:text="@string/song_name"
         android:gravity="center_vertical"
-        android:singleLine="true"
-        android:textColor="@color/black" />
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/songArtist"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="15dp"
+        android:textColor="?attr/colorOnSecondary"
         android:gravity="center_vertical"
         android:singleLine="true"
         android:layout_marginTop="30dp"
         android:layout_toStartOf="@+id/songDuration"
         android:layout_toEndOf="@+id/imagrMusicview"
-        android:text="@string/song_name"
-        android:textColor="@color/black" />
+        android:text="@string/song_name" />
 
 
     <TextView
@@ -48,8 +48,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginHorizontal="5dp"
         android:gravity="center"
-        android:text="@string/start_tv"
-        android:textColor="@color/black" />
+        android:textColor="?attr/colorOnSecondary"
+        android:text="@string/start_tv" />
 
 
 </RelativeLayout>
