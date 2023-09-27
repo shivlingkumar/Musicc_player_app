@@ -1,4 +1,4 @@
-package com.example.allaboutdarktheme.utils
+package com.example.mymusic.utils
 
 object CommonMethod {
 

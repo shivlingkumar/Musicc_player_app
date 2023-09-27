@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <!-- Previous Button -->
+    <ImageButton
+        android:id="@+id/previous_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/privous" />
+
+    <!-- Play/Pause Button -->
+    <ImageButton
+        android:id="@+id/play_pause_button"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/baseline_play_arrow_24" />
+
+    <!-- Next Button -->
+    <ImageButton
+        android:id="@+id/next_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/baseline_navigate_next_24" />
+
+</LinearLayout>

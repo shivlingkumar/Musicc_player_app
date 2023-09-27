@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.allaboutdarktheme"
-    compileSdk = 33
+    namespace = "com.example.mymusic"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.allaboutdarktheme"
+        applicationId = "com.example.mymusic"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -39,7 +39,7 @@ android {
 
     dependencies {
 
-        implementation("androidx.core:core-ktx:1.10.1")
+        implementation("androidx.core:core-ktx:1.12.0")
         implementation("androidx.appcompat:appcompat:1.6.1")
         implementation("com.google.android.material:material:1.9.0")
         implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -47,6 +47,8 @@ android {
         androidTestImplementation("androidx.test.ext:junit:1.1.5")
         androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
         implementation ("com.karumi:dexter:6.2.3")
+        implementation ("de.hdodenhof:circleimageview:3.1.0")
+        implementation("androidx.media:media:1.6.0")
 
     }
 }

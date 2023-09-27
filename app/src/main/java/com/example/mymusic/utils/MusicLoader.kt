@@ -1,17 +1,17 @@
-package com.example.allaboutdarktheme.utils
+package com.example.mymusic.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.provider.MediaStore
-import com.example.allaboutdarktheme.db.Music
+import com.example.mymusic.db.Music
 import java.io.File
 
 class MusicLoader {
 
     companion object  {
         @SuppressLint("Recycle", "Range")
-        fun getAllAudio(context: Context): ArrayList<com.example.allaboutdarktheme.db.Music> {
-            val tempList = ArrayList<com.example.allaboutdarktheme.db.Music>()
+        fun getAllAudio(context: Context): ArrayList<Music> {
+            val tempList = ArrayList<Music>()
             val selection = MediaStore.Audio.Media.IS_MUSIC + "!=0"
             val projection = arrayOf(
                 MediaStore.Audio.Media._ID,

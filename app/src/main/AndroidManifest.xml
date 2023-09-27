@@ -2,29 +2,42 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.MANAGE_MEDIA"
+        tools:ignore="ProtectedPermissions" />
+   <uses-permission android:name="android.permission.AUDIO_FOCUS"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/musical"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/musical"
         android:supportsRtl="true"
         android:theme="@style/Theme.AllAboutDarkTheme"
         tools:targetApi="31">
+
+
+
         <activity
-            android:name=".Playlist_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Favourite_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Player_Activity"
-            android:exported="false" />
+            android:name=".PlayerActivity"
+            android:configChanges="uiMode"
+            android:exported="true"
+            android:launchMode="singleTask"
+            />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -34,6 +47,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <service
+            android:name=".services.MyMusicService"
+           />
+        <receiver
+            android:name=".brodcast.NotificationReceiver"
+            android:enabled="true" />
     </application>
 
 </manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background shape -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <!-- Gradient background -->
+            <gradient
+                android:angle="90"
+                android:endColor="@color/teal_700"
+                android:startColor="@color/teal_200"
+                android:type="linear" />
+            <!-- Rounded corners -->
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</layer-list>

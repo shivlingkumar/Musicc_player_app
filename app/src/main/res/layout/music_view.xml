@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/musicContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:id="@+id/musicContainer"
     android:padding="2dp">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -13,43 +13,67 @@
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
         android:src="@drawable/musical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/curved" />
 
     <TextView
         android:id="@+id/songName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="30dp"
-        android:textColor="?attr/colorOnSecondary"
         android:layout_marginStart="15dp"
         android:layout_toStartOf="@+id/songDuration"
         android:layout_toEndOf="@+id/imagrMusicview"
-        android:text="@string/song_name"
         android:gravity="center_vertical"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:text="@string/song_name"
+        android:textColor="?attr/colorOnSecondary"
+        app:layout_constraintEnd_toStartOf="@+id/songDuration"
+        app:layout_constraintStart_toEndOf="@+id/imagrMusicview"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/songArtist"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="20dp"
         android:layout_marginStart="15dp"
-        android:textColor="?attr/colorOnSecondary"
-        android:gravity="center_vertical"
-        android:singleLine="true"
-        android:layout_marginTop="30dp"
         android:layout_toStartOf="@+id/songDuration"
         android:layout_toEndOf="@+id/imagrMusicview"
-        android:text="@string/song_name" />
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@string/song_name"
+        android:textColor="?attr/colorOnSecondary"
+        app:layout_constraintEnd_toStartOf="@id/songDuration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagrMusicview"
+        app:layout_constraintTop_toBottomOf="@+id/songName" />
 
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/menu_icon"
+        android:padding="10dp"
+        android:paddingBottom="16dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/songDuration"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/menu_icon"
         android:layout_marginHorizontal="5dp"
         android:gravity="center"
+        android:text="@string/start_tv"
         android:textColor="?attr/colorOnSecondary"
-        android:text="@string/start_tv" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/menu_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

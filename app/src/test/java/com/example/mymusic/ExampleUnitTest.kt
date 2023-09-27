@@ -1,4 +1,4 @@
-package com.example.allaboutdarktheme
+package com.example.mymusic
 
 import org.junit.Test
 
